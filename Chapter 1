@@ -1,0 +1,144 @@
+Conditionals and Control Flow
+
+To be TRUE or not be TRUE, that's the question. 
+In this chapter you'll learn about relational operators to see how R objects compare and logical operators to combine logicals.
+Next, you'll use this knowledge to build conditional statements.
+
+1.Relational Operators : 
+  https://campus.datacamp.com/courses/intermediate-r/chapter-1-conditionals-and-control-flow?ex=1
+------------------------------------------------------------------------------------------------------------------------------
+
+2. Equality
+------------------------------------------------------------------------------------------------------------------------------
+The most basic form of comparison is equality. Let's briefly recap its syntax.
+The following statements all evaluate to TRUE
+3 == (2 + 1)
+"intermediate" != "r"
+TRUE != FALSE
+"Rchitect" != "rchitect"
+
+Notice from the last expression that R is case sensitive: "R" is not equal to "r". 
+Keep this in mind when solving the exercises in this chapter!
+Instructions: 
+>In the editor on the right, write R code to see if TRUE equals FALSE.
+>Likewise, check if -6 * 14 is not equal to 17 - 101.
+>Next up: comparison of character strings. Ask R whether the strings "useR" and "user" are equal.
+>Finally, find out what happens if you compare logicals to numerics: are TRUE and 1 equal?
+
+Sample: 
+# Comparison of logicals
+
+# Comparison of numerics
+
+# Comparison of character strings
+
+# Compare a logical with a numeric
+
+
+Solution 
+# Comparison of logicals
+TRUE == FALSE
+# Comparison of numerics
+-6 * 14 != 17 -101
+# Comparison of character strings
+"useR" == "user"
+# Compare a logical with a numeric
+TRUE == 1 
+------------------------------------------------------------------------------------------------------------------------------
+
+2. Greater and less than
+
+Apart from equality operators, Filip also introduced the less than and greater than operators. 
+These relations, represented as < and > in R, can be combined with an equal sign to express an inequality. 
+All R expressions in the following code chunk evaluate to FALSE:
+(1 + 2) > 4
+"dog" < "Cats"
+TRUE <= FALSE
+
+Remember that for string comparison, R determines the greater than relationship based on the alphabet. 
+Also, keep in mind that TRUE corresponds to 1 in R, while FALSE coerces to 0 behind the scenes. 
+Therefore, FALSE < TRUE is TRUE.
+
+Instructions: 
+> -6 * 5 + 2 is greater than or equal to -10 + 1
+> "raining" is less than or equal to "raining dogs"
+> TRUE is greater than FALSE
+
+==Sample
+
+# Comparison of numerics
+
+# Comparison of character strings
+
+# Comparison of logicals
+
+==Solution
+
+# Comparison of numerics
+-6 * 5 + 2 >= -10 + 1
+# Comparison of character strings
+"raining" <= "raining dogs"
+# Comparison of logicals
+TRUE > FALSE 
+
+Console:
+ > # Comparison of numerics
+> -6 * 5 + 2 >= -10 + 1
+[1] FALSE
+> # Comparison of character strings
+> "raining" <= "raining dogs"
+[1] TRUE
+> # Comparison of logicals
+> TRUE > FALSE
+[1] TRUE
+------------------------------------------------------------------------------------------------------------------------------
+
+3. Compare Vectors 
+You are already aware that R is a master at handling vectors. 
+Without having to change anything about the syntax, R's relational operators also work on vectors.
+
+Let's go back to the example that was started in the video.
+You want to figure out whether your marketing efforts, funny tweets and facebook posts have increased your visibility on 
+various social media platforms, more specifically LinkedIn and Facebook. The sample code in the editor intializes the vectors
+linkedin and facebook. Each of the vector contains the number of profile views of your LinkedIn and Facebook profiles in the
+last seven days.
+
+Instructions
+Using relational operators, find a logical answer, i.e. TRUE or FALSE, to the following questions:
+>For which days the number of LinkedIn profile views exceeded 15?
+>When was your LinkedIn profile viewed only 5 times or less?
+>When was your LinkedIn profile visited more often than your Facebook profile?
+
+Sample:
+# The linkedin and facebook vectors have already been created for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+# Popular days
+
+# Quiet days
+
+# LinkedIn more popular than Facebook
+
+Solution:
+
+# Popular days
+linkedin > 15
+
+# Quiet days
+linkedin <= 5 
+
+# LinkedIn more popular than Facebook
+linkedin > facebook 
+
+Console: 
+> # Popular days
+> linkedin > 15
+[1]  TRUE FALSE FALSE FALSE FALSE  TRUE FALSE
+> # Quiet days
+> linkedin <= 5
+[1] FALSE FALSE FALSE  TRUE  TRUE FALSE FALSE
+> # LinkedIn more popular than Facebook
+> linkedin > facebook
+[1] FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE
+------------------------------------------------------------------------------------------------------------------------------
+
