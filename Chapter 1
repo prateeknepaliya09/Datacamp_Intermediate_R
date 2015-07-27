@@ -142,3 +142,17 @@ Console:
 [1] FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE
 ------------------------------------------------------------------------------------------------------------------------------
 
+4. Compare matrices
+
+R's ability to deal with different data structures for comparisons does not stop at vectors. You'll see that it is
+straightforward to use matrices together with relational operators!
+Instead of in vectors (as in the previous exercise), the LinkedIn and Facebook data is now contained in a matrix called views.
+The first row contains the LinkedIn information; the second row the Facebook information.
+The original vectors facebook and linkedin are still available as well.
+
+
+Instructions:
+Using the relational operators you've learned so far, discover:
+>When were the views exactly equal to 13? Use the views matrix to return a matrix containing logicals.
+>For which days was the number of views less than or equal to 14? Again, have R return a logical matrix.
+>How often did the number of Facebook views equal or exceed twice the LinkedIn views during a single day? Use the sum() function in combination with the linkedin and facebook vectors.
