@@ -155,4 +155,70 @@ Instructions:
 Using the relational operators you've learned so far, discover:
 >When were the views exactly equal to 13? Use the views matrix to return a matrix containing logicals.
 >For which days was the number of views less than or equal to 14? Again, have R return a logical matrix.
->How often did the number of Facebook views equal or exceed twice the LinkedIn views during a single day? Use the sum() function in combination with the linkedin and facebook vectors.
+>How often did the number of Facebook views equal or exceed twice the LinkedIn views during a single day?
+Use the sum() function in combination with the linkedin and facebook vectors.
+
+Sample:
+
+ # The social data has been created for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+views <- matrix(c(linkedin, facebook), nrow = 2, byrow = TRUE)
+# When does views equal 13?
+# When is views less than or equal to 14?
+# How often does facebook equal or exceed linkedin times two?
+
+Solution :
+
+# The social data has been created for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+views <- matrix(c(linkedin, facebook), nrow = 2, byrow = TRUE)
+# When does views equal 13?
+views == 13
+# When is views less than or equal to 14?
+views <= 14
+# How often does facebook equal or exceed linkedin times two?
+sum(facebook >= linkedin * 2)
+
+Console:
+> # The social data has been created for you
+> linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+> facebook <- c(17, 7, 5, 16, 8, 13, 14)
+> views <- matrix(c(linkedin, facebook), nrow = 2, byrow = TRUE)
+> # When does views equal 13?
+> views == 13
+      [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]
+[1,] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
+[2,] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE
+> # When is views less than or equal to 14?
+> views <= 14
+      [,1] [,2] [,3]  [,4] [,5]  [,6] [,7]
+[1,] FALSE TRUE TRUE  TRUE TRUE FALSE TRUE
+[2,] FALSE TRUE TRUE FALSE TRUE  TRUE TRUE
+> # How often does facebook equal or exceed linkedin times two?
+> sum(facebook >= linkedin * 2)
+[1] 2
+------------------------------------------------------------------------------------------------------------------------------
+
+& and |
+
+Write R expressions to solve the following questions concerning last:
+>Is last under 5 or above 10?
+>Is last between 15 and 20, excluding 15 but including 20?
+>Is last between 0 and 5 (excluding both) or between 10 and 15 (excluding both)? 
+  There's already some erroneous code in there, up to you to fix it!
+  
+Solution:
+# The linkedin and last variable are already defined for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+last <- tail(linkedin, 1)
+
+# Is last under 5 or above 10?
+last < 5 | last > 10 
+# Is last between 15 (exclusive) and 20 (inclusive)?
+last > 15 & last <=20
+
+# Is last between 0 and 5 or between 10 and 15?
+(last > 0 & last < 5) | (last > 10 & last < 15)
+  
