@@ -223,3 +223,51 @@ last > 15 & last <=20
 (last > 0 & last < 5) | (last > 10 & last < 15)
   
 ------------------------------------------------------------------------------------------------------------------------------
+
+& and | (2)
+
+Just as relational operators, logical operators work perfectly fine with vectors and matrices.
+
+Instructions
+
+>When did LinkedIn views exceed 10 and Facebook views did not reach 10 for a particular day?
+  Use the linkedin and facebook vectors.
+>When were one or both your LinkedIn and Facebook profiles visited at least 12 times?
+>When is the views matrix equal to a number between 11 and 14, excluding 11 and including 14?
+
+Solution :
+ # The social data (linkedin, facebook, views) has been created for you
+
+# linkedin exceeds 10 but facebook below 10
+linkedin > 10 & facebook < 10
+
+# When were one or both visited at least 12 times?
+linkedin >= 12 | facebook >= 12
+
+# When is views between 11 (exclusive) and 14 (inclusive)?
+views > 11 & views <= 14 
+
+------------------------------------------------------------------------------------------------------------------------------
+
+***Reverse the result: !
+
+Solution: False
+
+------------------------------------------------------------------------------------------------------------------------------
+Blend it all together.
+Instead of recording the number of LinkedIn profile views only for yourself, suppose you conducted a survey inside the company
+you're working for. You've asked every employee with a LinkedIn profile how often their LinkedIn profile was visited in the 
+past seven days, and stored the results in a data frame, called li_df
+
+Goal : Analyze the data for the second day
+Find the number of employees that are either very popular (more than 25 profile views) or rather unnoticeable (views are below 5) 
+on the second day, i.e. column day2 of the data frame li_df. Simply print this number to the console.
+
+
+Solution:
+
+print(sum((li_df$day2 > 25) |(li_df$day2 < 5)))
+
+------------------------------------------------------------------------------------------------------------------------------
+
+
