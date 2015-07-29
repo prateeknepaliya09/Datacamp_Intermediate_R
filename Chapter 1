@@ -331,4 +331,27 @@ if(num_views > 15) {
    print("Try to be more visible!")
     }
 ------------------------------------------------------------------------------------------------------------------------------
+Customize further: else if
 
+The else if statement allows to further customize your control structure. You can add as many else if statements as you like.
+Keep in mind that R ignores the remainder of the control structure once a condition has been found that is TRUE and the
+corresponding expressions have been executed. Here's an overview of the syntax to freshen your memory:
+
+if(condition1) {
+  expr1
+} else if(condition2) {
+  expr2
+} else if(condition3) {
+  expr3
+} else {
+  expr4
+}
+
+Instructions
+
+Add code to both control structures such that:
+>R prints out "Showing Facebook information" if medium is equal to "Facebook". Remember that R is case sensitive!
+>"Your number of views is average" is printed if num_views is between 15 (inclusive) and 10 (exclusive). 
+  Feel free to change the variables medium and num_views to see how the control structure respond.
+  
+Solution:
