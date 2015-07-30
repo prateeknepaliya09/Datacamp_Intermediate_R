@@ -355,3 +355,68 @@ Add code to both control structures such that:
   Feel free to change the variables medium and num_views to see how the control structure respond.
   
 Solution:
+# Variables related to your last day of recordings
+medium <- "LinkedIn"
+num_views <- 14
+
+# Control structure for medium
+if(medium == "LinkedIn") {
+  print("Showing LinkedIn information")
+} else if(medium == "Facebook") {
+  print("Showing Facebook information")
+} else {
+  print("Unknown medium")
+}
+
+# Control structure for num_views
+if(num_views > 15) {
+  print("You're popular!")
+} else if(num_views <= 15 & num_views > 10) {
+  print("Your number of views is average")
+} else {
+  print("Try to be more visible!")
+}
+------------------------------------------------------------------------------------------------------------------------------
+Else if 2.0
+
+Don't let the previous exercises misguide you: apart from simply printing out status messages, you can do anything you want
+inside if-else constructs. You can even put in another set of conditional statements.
+
+Solution : (1) and (3)
+
+------------------------------------------------------------------------------------------------------------------------------
+Take control!
+
+Nothing new is introduced in this exercise; just try to combine everything that you've learned so far. Going from relational 
+operators, over logical operators to control constructs: you'll need them all!
+In the editor, we've coded two values beforehand: li and fb, denoting the number of profile views your LinkedIn and Facebook
+profile had on the last days of recordings. Go through the instructions to create R code that generates a 'social media score',
+sms, based on the values of li and fb.
+
+Instructions
+
+Write a complete control-flow construct with the following behavior:
+>If both li and fb are at least 15, set sms equal to double the sum of li and fb.
+>If both li and fb are below 10 (exclusive), set sms equal to half the sum of li and fb.
+>In all other cases, set sms equal to the sum of li and fb.
+>Finally, print the resulting sms variable to the console.
+
+Solution: 
+# Variables related to your last day of recordings
+li <- 15
+fb <- 9
+
+# Code the control-flow construct
+if (li >=15 & fb >=15){
+sms=2*(li + fb)
+}else if (li < 10  & fb < 10){
+sms = 0.5 * (li + fb)
+} else {
+sms = li + fb
+}
+
+# Print the resulting sms to the console
+print(sms)
+
+------------------------------------------------------------------------------------------------------------------------------
+END of chapter 1.
